@@ -15,6 +15,7 @@
  */
 package org.springframework.samples.petclinic.service;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Date;
 
@@ -36,7 +37,7 @@ import org.springframework.samples.petclinic.repository.PetTypeRepository;
 import org.springframework.samples.petclinic.repository.SpecialtyRepository;
 import org.springframework.samples.petclinic.repository.VetRepository;
 import org.springframework.samples.petclinic.repository.VisitRepository;
-import org.springframework.samples.petclinic.repository.OfferRepository;
+import org.springframework.samples.petclinic.repository.OfferRepositoryJPA;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -57,8 +58,10 @@ public class ClinicServiceImpl implements ClinicService {
     private VisitRepository visitRepository;
     private SpecialtyRepository specialtyRepository;
 	private PetTypeRepository petTypeRepository;
-	private OfferRepository offerRepository;
 
+	@Autowired
+	private OfferRepositoryJPA offerRepJpa;
+	
     @Autowired
      public ClinicServiceImpl(
        		 PetRepository petRepository,
@@ -66,14 +69,18 @@ public class ClinicServiceImpl implements ClinicService {
     		 OwnerRepository ownerRepository,
     		 VisitRepository visitRepository,
     		 SpecialtyRepository specialtyRepository,
-			 PetTypeRepository petTypeRepository,
-			 OfferRepository offerRepository) {
-        this.petRepository = petRepository;
+			 PetTypeRepository petTypeRepository) {
+        
+
+    	
+    	
+    	this.petRepository = petRepository;
         this.vetRepository = vetRepository;
         this.ownerRepository = ownerRepository;
         this.visitRepository = visitRepository;
         this.specialtyRepository = specialtyRepository;
 		this.petTypeRepository = petTypeRepository;
+
     }
 
 	@Override
@@ -291,42 +298,34 @@ public class ClinicServiceImpl implements ClinicService {
 	}
 
 	@Override
-	@Transactional(readOnly = true)
-	public Collection<Offer> findOfferValid(Date fechaActual) throws DataAccessException {
-		return offerRepository.valid(fechaActual);
+	public Collection<Offer> findOfferValid(LocalDate date) throws DataAccessException {
+		// TODO Auto-generated method stub
+		return offerRepJpa.findByExpireDate(date);
 	}
 
 	@Override
-	@Transactional(readOnly = true)
 	public Offer findOfferById(int id) throws DataAccessException {
-		Offer offer = null;
-		try {
-			offer = offerRepository.findById(id);
-		} catch (ObjectRetrievalFailureException|EmptyResultDataAccessException e) {
-		// just ignore not found exceptions for Jdbc/Jpa realization
-			return null;
-		}
-		return offer;
+		// TODO Auto-generated method stub
+		return offerRepJpa.findOne(id);
 	}
 
 	@Override
-	@Transactional(readOnly = true)
 	public Collection<Offer> findAllOffer() throws DataAccessException {
-		return offerRepository.findAll();
+		// TODO Auto-generated method stub
+		return offerRepJpa.findAll();
 	}
 
 	@Override
-	@Transactional
-	public void saveOffer(Offer offer) throws DataAccessException{
-		offerRepository.save(offer);
-
+	public void saveOffer(Offer offer) throws DataAccessException {
+	
+		offerRepJpa.save(offer);
 	}
 
 	@Override
-	@Transactional
-	public void deleteOffer(Offer offer) throws DataAccessException{
-		offerRepository.delete(offer);
-
+	public void deleteOffer(Offer offer) throws DataAccessException {
+		// TODO Auto-generated method stub
+		offerRepJpa.delete(offer);
+		
 	}
 
 
