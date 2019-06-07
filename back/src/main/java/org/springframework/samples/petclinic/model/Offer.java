@@ -30,7 +30,7 @@ public class Offer extends BaseEntity{
 	@Column(name = "expireDate")
 	@NotEmpty
 	@Temporal(TemporalType.DATE)
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	private Date expireDate;
 	
 	public String getTitle() {
