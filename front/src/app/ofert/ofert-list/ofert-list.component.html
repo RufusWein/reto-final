@@ -1,3 +1,29 @@
-<p>
-  ofert-list works!
-</p>
+<div class="container-fluid">
+  <div class="container xd-container">
+    <h2>Offers</h2>
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <thead>
+        <tr>
+          <th>Title</th>
+          <th>Description</th>
+          <th>Discount</th>
+          <th>Expirated</th>
+        </tr>
+        </thead>
+
+        <tbody>
+        <tr *ngFor="let ofert of oferts">
+          <td>{{ofert.title}}</td>
+          <td>{{ofert.description}}</td>
+          <td>{{ofert.discount}}</td>
+          <td>{{ofert.expirated}}</td>
+          <td>
+        </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
