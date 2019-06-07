@@ -18,5 +18,4 @@ public interface OfferRepository {
 	
 	void delete(Offer offer) throws DataAccessException;
 	
-
 }

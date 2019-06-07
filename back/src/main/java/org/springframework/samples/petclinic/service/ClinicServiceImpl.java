@@ -72,7 +72,7 @@ public class ClinicServiceImpl implements ClinicService {
         this.vetRepository = vetRepository;
         this.ownerRepository = ownerRepository;
         this.visitRepository = visitRepository;
-        this.specialtyRepository = specialtyRepository; 
+        this.specialtyRepository = specialtyRepository;
 		this.petTypeRepository = petTypeRepository;
     }
 
@@ -254,14 +254,14 @@ public class ClinicServiceImpl implements ClinicService {
 	@Transactional
 	public void savePet(Pet pet) throws DataAccessException {
 		petRepository.save(pet);
-		
+
 	}
 
 	@Override
 	@Transactional
 	public void saveVisit(Visit visit) throws DataAccessException {
 		visitRepository.save(visit);
-		
+
 	}
 
 	@Override
@@ -275,7 +275,7 @@ public class ClinicServiceImpl implements ClinicService {
 	@Transactional
 	public void saveOwner(Owner owner) throws DataAccessException {
 		ownerRepository.save(owner);
-		
+
 	}
 
 	@Override
@@ -292,10 +292,10 @@ public class ClinicServiceImpl implements ClinicService {
 
 	@Override
 	@Transactional(readOnly = true)
-	public Collection<Offer> findOfferValid(Date date) throws DataAccessException {
-		return offerRepository.valid(date);
+	public Collection<Offer> findOfferValid(Date fechaActual) throws DataAccessException {
+		return offerRepository.valid(fechaActual);
 	}
-	
+
 	@Override
 	@Transactional(readOnly = true)
 	public Offer findOfferById(int id) throws DataAccessException {
@@ -308,7 +308,7 @@ public class ClinicServiceImpl implements ClinicService {
 		}
 		return offer;
 	}
-	
+
 	@Override
 	@Transactional(readOnly = true)
 	public Collection<Offer> findAllOffer() throws DataAccessException {
@@ -319,17 +319,17 @@ public class ClinicServiceImpl implements ClinicService {
 	@Transactional
 	public void saveOffer(Offer offer) throws DataAccessException{
 		offerRepository.save(offer);
-		
+
 	}
 
 	@Override
 	@Transactional
 	public void deleteOffer(Offer offer) throws DataAccessException{
 		offerRepository.delete(offer);
-		
+
 	}
-	
-	
+
+
 
 
 }

@@ -81,7 +81,7 @@ CREATE TABLE roles (
 ALTER TABLE roles ADD CONSTRAINT fk_username FOREIGN KEY (username) REFERENCES users (username);
 CREATE INDEX fk_username_idx ON roles (username);
 
-CREATE  TABLE offerS (
+CREATE  TABLE offers (
   id            INTEGER IDENTITY PRIMARY KEY,
   title    		VARCHAR(40) NOT NULL ,
   description   VARCHAR(150) NOT NULL ,
