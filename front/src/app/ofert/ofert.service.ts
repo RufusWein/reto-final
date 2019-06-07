@@ -13,7 +13,7 @@ export class OfertService {
   getOfert() {
     return this.httpClient.get<Ofert[]>('')
   }
-  addOfert(oferts : Ofert): Observable<any>{ {
+  addOfert(oferts : Ofert): Observable<any>{
     const headers = new HttpHeaders();
     headers.append('Content-Type', 'application/json');
     headers.append('Accept', 'application/json');
