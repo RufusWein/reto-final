@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ofert-add.component.css']
 })
 export class OfertAddComponent implements OnInit {
-
+  
   constructor() { }
 
   ngOnInit() {
