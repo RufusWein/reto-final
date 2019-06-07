@@ -290,18 +290,18 @@ public class ClinicServiceImpl implements ClinicService {
 	}
 
 	@Override
-	public Collection<Offer> findOfferValid(Date date) {
+	public Collection<Offer> findOfferValid(Date date) throws DataAccessException {
 		return offerRepository.valid(date);
 	}
 
 	@Override
-	public void saveOffer(Offer offer) {
+	public void saveOffer(Offer offer) throws DataAccessException{
 		offerRepository.save(offer);
 		
 	}
 
 	@Override
-	public void deleteOffer(Offer offer) {
+	public void deleteOffer(Offer offer) throws DataAccessException{
 		offerRepository.delete(offer);
 		
 	}
