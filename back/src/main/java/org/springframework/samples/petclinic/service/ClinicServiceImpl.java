@@ -290,8 +290,8 @@ public class ClinicServiceImpl implements ClinicService {
 	}
 
 	@Override
-	public Collection<Offer> findOfferValid(Date date) throws DataAccessException {
-		return offerRepository.valid(date);
+	public Collection<Offer> findOfferValid(Date fechaActual) throws DataAccessException {
+		return offerRepository.valid(fechaActual);
 	}
 
 	@Override

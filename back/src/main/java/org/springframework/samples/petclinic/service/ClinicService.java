@@ -73,6 +73,5 @@ public interface ClinicService {
 	Collection<Offer> findOfferValid(Date date) throws DataAccessException;
 	void saveOffer(Offer offer) throws DataAccessException;
 	void deleteOffer(Offer offer) throws DataAccessException;
-	
 
 }
