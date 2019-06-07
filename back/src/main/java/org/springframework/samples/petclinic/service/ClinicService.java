@@ -15,6 +15,7 @@
  */
 package org.springframework.samples.petclinic.service;
 
+import java.time.LocalDate;
 import java.util.Collection;
 import java.util.Date;
 
@@ -70,10 +71,10 @@ public interface ClinicService {
 	void saveSpecialty(Specialty specialty) throws DataAccessException;
 	void deleteSpecialty(Specialty specialty) throws DataAccessException;
 
-	Collection<Offer> findOfferValid(Date date) throws DataAccessException;
 	Offer findOfferById(int id) throws DataAccessException;
 	Collection<Offer> findAllOffer() throws DataAccessException;
 	void saveOffer(Offer offer) throws DataAccessException;
 	void deleteOffer(Offer offer) throws DataAccessException;
+	Collection<Offer> findOfferValid(LocalDate date) throws DataAccessException;
 
 }
