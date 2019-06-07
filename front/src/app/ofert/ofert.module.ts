@@ -7,7 +7,7 @@ import { OfertDeleteComponent } from './ofert-delete/ofert-delete.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
   ],
   declarations: [OfertListComponent, OfertEditComponent, OfertAddComponent, OfertDeleteComponent]
 })
