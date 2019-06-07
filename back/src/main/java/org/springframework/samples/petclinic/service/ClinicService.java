@@ -70,9 +70,9 @@ public interface ClinicService {
 	void saveSpecialty(Specialty specialty) throws DataAccessException;
 	void deleteSpecialty(Specialty specialty) throws DataAccessException;
 	
-	Collection<Offer> findOfferValid(Date date);
-	void saveOffer(Offer offer);
-	void deleteOffer(Offer offer);
+	Collection<Offer> findOfferValid(Date date) throws DataAccessException;
+	void saveOffer(Offer offer) throws DataAccessException;
+	void deleteOffer(Offer offer) throws DataAccessException;
 	
 
 }
