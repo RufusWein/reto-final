@@ -71,8 +71,12 @@ public interface ClinicService {
 	void deleteSpecialty(Specialty specialty) throws DataAccessException;
 	
 	Collection<Offer> findOfferValid(Date date) throws DataAccessException;
+	Offer findOfferById(int id) throws DataAccessException;
+	Collection<Offer> findAllOffer() throws DataAccessException;
 	void saveOffer(Offer offer) throws DataAccessException;
 	void deleteOffer(Offer offer) throws DataAccessException;
+	
+	
 	
 
 }

@@ -66,7 +66,8 @@ public class ClinicServiceImpl implements ClinicService {
     		 OwnerRepository ownerRepository,
     		 VisitRepository visitRepository,
     		 SpecialtyRepository specialtyRepository,
-			 PetTypeRepository petTypeRepository) {
+			 PetTypeRepository petTypeRepository,
+			 OfferRepository offerRepository) {
         this.petRepository = petRepository;
         this.vetRepository = vetRepository;
         this.ownerRepository = ownerRepository;
@@ -290,17 +291,39 @@ public class ClinicServiceImpl implements ClinicService {
 	}
 
 	@Override
+	@Transactional(readOnly = true)
 	public Collection<Offer> findOfferValid(Date date) throws DataAccessException {
 		return offerRepository.valid(date);
 	}
+	
+	@Override
+	@Transactional(readOnly = true)
+	public Offer findOfferById(int id) throws DataAccessException {
+		Offer offer = null;
+		try {
+			offer = offerRepository.findById(id);
+		} catch (ObjectRetrievalFailureException|EmptyResultDataAccessException e) {
+		// just ignore not found exceptions for Jdbc/Jpa realization
+			return null;
+		}
+		return offer;
+	}
+	
+	@Override
+	@Transactional(readOnly = true)
+	public Collection<Offer> findAllOffer() throws DataAccessException {
+		return offerRepository.findAll();
+	}
 
 	@Override
+	@Transactional
 	public void saveOffer(Offer offer) throws DataAccessException{
 		offerRepository.save(offer);
 		
 	}
 
 	@Override
+	@Transactional
 	public void deleteOffer(Offer offer) throws DataAccessException{
 		offerRepository.delete(offer);
 		
