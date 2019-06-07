@@ -1,7 +1,7 @@
 package org.springframework.samples.petclinic.repository;
 
-import java.sql.Date;
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.dao.DataAccessException;
 import org.springframework.samples.petclinic.model.Offer;
