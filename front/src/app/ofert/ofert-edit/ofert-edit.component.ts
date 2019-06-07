@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Ofert } from '../ofert';
 
 @Component({
   selector: 'app-ofert-edit',
@@ -6,6 +7,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./ofert-edit.component.css']
 })
 export class OfertEditComponent implements OnInit {
+
+    expiredate: Date;
+    ofert: Ofert ={ id:1,title:"Rebaja",description:"esto es una prueba",discount:55, expiredate: new Date() };
 
   constructor() { }
 

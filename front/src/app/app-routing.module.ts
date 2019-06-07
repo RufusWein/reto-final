@@ -35,6 +35,7 @@ const appRoutes: Routes = [
   {path: '', component: WelcomeComponent},
   {path: 'ofert', component: OfertListComponent},
   {path: 'ofert/add', component: OfertAddComponent},
+  {path: 'ofert/edit/1', component: OfertEditComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 
