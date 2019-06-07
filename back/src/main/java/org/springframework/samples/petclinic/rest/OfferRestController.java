@@ -1,7 +1,7 @@
 package org.springframework.samples.petclinic.rest;
 
+import java.time.LocalDate;
 import java.util.Collection;
-import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -41,7 +41,7 @@ public class OfferRestController {
 	
 	@RequestMapping(value = "", method = RequestMethod.GET, produces = MediaType.APPLICATION_JSON_UTF8_VALUE)
 	public ResponseEntity<Collection<Offer>> getOffersValid(){
-		Collection<Offer> offers = this.clinicService.findOfferValid(new Date());
+		Collection<Offer> offers = this.clinicService.findOfferValid(LocalDate.now());
 		if(offers.isEmpty()){
 			return new ResponseEntity<Collection<Offer>>(HttpStatus.NOT_FOUND);
 		}
