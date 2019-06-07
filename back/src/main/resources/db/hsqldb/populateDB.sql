@@ -58,11 +58,11 @@ INSERT INTO roles (username, role) VALUES ('admin', 'ROLE_OWNER_ADMIN');
 INSERT INTO roles (username, role) VALUES ('admin', 'ROLE_VET_ADMIN');
 INSERT INTO roles (username, role) VALUES ('admin', 'ROLE_ADMIN');
 
-INSERT INTO offer VALUES (1,'Oferta1','Descripcion1',0.5, '2018-06-16');
-INSERT INTO offer VALUES (1,'Oferta2','Descripcion2',0.5, '2018-06-16');
-INSERT INTO offer VALUES (1,'Oferta3','Descripcion3',0.5, '2018-06-16');
-INSERT INTO offer VALUES (1,'Oferta4','Descripcion4',0.5, '2019-12-16');
-INSERT INTO offer VALUES (1,'Oferta5','Descripcion5',0.5, '2019-12-16');
-INSERT INTO offer VALUES (1,'Oferta6','Descripcion6',0.5, '2019-12-16');
+INSERT INTO offers VALUES (1,'Oferta1','Descripcion1',0.5, null);
+INSERT INTO offers VALUES (1,'Oferta2','Descripcion2',0.5, null);
+INSERT INTO offers VALUES (1,'Oferta3','Descripcion3',0.5, null);
+INSERT INTO offers VALUES (1,'Oferta4','Descripcion4',0.5, null);
+INSERT INTO offers VALUES (1,'Oferta5','Descripcion5',0.5, null);
+INSERT INTO offers VALUES (1,'Oferta6','Descripcion6',0.5, null);
 
 
