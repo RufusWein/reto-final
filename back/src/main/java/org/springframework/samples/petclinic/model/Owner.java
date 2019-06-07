@@ -48,6 +48,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
  * @author Sam Brannen
  * @author Michael Isvy
  */
+
 @Entity
 @Table(name = "owners")
 @JsonSerialize(using = JacksonCustomOwnerSerializer.class)
