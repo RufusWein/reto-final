@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Ofert } from '../ofert';
 import { NgForm } from '@angular/forms';
+import { OfertService } from '../ofert.service';
 
 @Component({
   selector: 'app-ofert-add',
@@ -9,10 +10,10 @@ import { NgForm } from '@angular/forms';
 })
 export class OfertAddComponent implements OnInit {
   ofert: Ofert;
-  constructor() { }
+  constructor(private servicio :OfertService ) {}
 
   onSubmit(form: NgForm){
-
+    //this.servicio
   }
   ngOnInit() {
   }
