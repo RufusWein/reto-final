@@ -1,7 +1,7 @@
 package org.springframework.samples.petclinic.repository.jpa;
 
-import java.sql.Date;
 import java.util.Collection;
+import java.util.Date;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
