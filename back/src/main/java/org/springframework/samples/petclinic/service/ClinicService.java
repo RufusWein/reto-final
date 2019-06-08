@@ -15,7 +15,6 @@
  */
 package org.springframework.samples.petclinic.service;
 
-import java.time.LocalDate;
 import java.util.Collection;
 
 import org.springframework.dao.DataAccessException;
@@ -74,6 +73,7 @@ public interface ClinicService {
 	Collection<Offer> findAllOffer() throws DataAccessException;
 	void saveOffer(Offer offer) throws DataAccessException;
 	void deleteOffer(Offer offer) throws DataAccessException;
-	Collection<Offer> findOfferValid(LocalDate date) throws DataAccessException;
+	// No necesitamos fechas, porque deberian ser fechas por encima a la actual
+	Collection<Offer> findOfferValid() throws DataAccessException;
 
 }

@@ -27,38 +27,39 @@ public class Offer extends BaseEntity{
 	@NotEmpty
 	private double discount;
 	
-	@Column(name = "expireDate")
+	@Column(name = "expire_date")
 	@NotEmpty
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	private Date expireDate;
-	
+	//////////////////////////////////////////// Metodos ////////////////////////////////////////////////////
 	public String getTitle() {
 		return title;
 	}
 	public void setTitle(String title) {
 		this.title = title;
 	}
+	
 	public String getDescription() {
 		return description;
 	}
 	public void setDescription(String description) {
 		this.description = description;
 	}
+	
 	public double getDiscount() {
 		return discount;
 	}
 	public void setDiscount(double discount) {
 		this.discount = discount;
 	}
+	
 	public Date getExpireDate() {
 		return expireDate;
 	}
 	public void setExpireDate(Date expireDate) {
 		this.expireDate = expireDate;
 	}
-	
-	
-	
+		
 	
 }

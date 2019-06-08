@@ -86,5 +86,5 @@ CREATE  TABLE offers (
   title    		VARCHAR(40) NOT NULL ,
   description   VARCHAR(150) NOT NULL ,
   discount     	DOUBLE NOT NULL ,
-  expireDate   	DATE NOT NULL
+  expire_date   DATE NOT NULL
 );

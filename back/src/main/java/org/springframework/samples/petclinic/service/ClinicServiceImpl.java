@@ -15,8 +15,9 @@
  */
 package org.springframework.samples.petclinic.service;
 
-import java.time.LocalDate;
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
@@ -30,13 +31,13 @@ import org.springframework.samples.petclinic.model.PetType;
 import org.springframework.samples.petclinic.model.Specialty;
 import org.springframework.samples.petclinic.model.Vet;
 import org.springframework.samples.petclinic.model.Visit;
+import org.springframework.samples.petclinic.repository.OfferRepositoryJPA;
 import org.springframework.samples.petclinic.repository.OwnerRepository;
 import org.springframework.samples.petclinic.repository.PetRepository;
 import org.springframework.samples.petclinic.repository.PetTypeRepository;
 import org.springframework.samples.petclinic.repository.SpecialtyRepository;
 import org.springframework.samples.petclinic.repository.VetRepository;
 import org.springframework.samples.petclinic.repository.VisitRepository;
-import org.springframework.samples.petclinic.repository.OfferRepositoryJPA;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
@@ -48,7 +49,6 @@ import org.springframework.transaction.annotation.Transactional;
  * @author Vitaliy Fedoriv
  */
 @Service
-
 public class ClinicServiceImpl implements ClinicService {
 
     private PetRepository petRepository;
@@ -57,9 +57,9 @@ public class ClinicServiceImpl implements ClinicService {
     private VisitRepository visitRepository;
     private SpecialtyRepository specialtyRepository;
 	private PetTypeRepository petTypeRepository;
-
+	
 	@Autowired
-	private OfferRepositoryJPA offerRepJpa;
+	private OfferRepositoryJPA offerRepJpa; 
 	
     @Autowired
      public ClinicServiceImpl(
@@ -69,9 +69,6 @@ public class ClinicServiceImpl implements ClinicService {
     		 VisitRepository visitRepository,
     		 SpecialtyRepository specialtyRepository,
 			 PetTypeRepository petTypeRepository) {
-        
-
-    	
     	
     	this.petRepository = petRepository;
         this.vetRepository = vetRepository;
@@ -81,7 +78,45 @@ public class ClinicServiceImpl implements ClinicService {
 		this.petTypeRepository = petTypeRepository;
 
     }
+    // Nuestro REPOSITORIO OFFER ///////////////////////////////////////////////////////////////////////
+	@Override
+	public Collection<Offer> findOfferValid() throws DataAccessException {
+		// TODO Auto-generated method stub
+		Date fechaActual=new Date(),
+		     fechaFutura;
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(fechaActual);
+		cal.add(Calendar.YEAR, 20); // 20 anios serian suficientes
+		fechaFutura = cal.getTime();
+		return offerRepJpa.findByExpireDateBetween(fechaActual, fechaFutura);
+	}
+	
+	@Override
+	public Offer findOfferById(int id) throws DataAccessException {
+		// TODO Auto-generated method stub
+		return offerRepJpa.findOfferById(id);
+	}
+    
+	// CRUD (El Update es un save pero sin crear el objeto) ///////////////////////
+	@Override
+	public void saveOffer(Offer offer) throws DataAccessException {	
+		offerRepJpa.save(offer);
+	}
+	
+	@Override
+	public Collection<Offer> findAllOffer() throws DataAccessException {
+		// TODO Auto-generated method stub
+		return offerRepJpa.findAll();
+	}
 
+	@Override
+	public void deleteOffer(Offer offer) throws DataAccessException {
+		// TODO Auto-generated method stub
+		offerRepJpa.delete(offer);
+		
+	}
+	//////////////////////////////////////////////////////////////////////////////////////////////////////
+    
 	@Override
 	@Transactional(readOnly = true)
 	public Collection<Pet> findAllPets() throws DataAccessException {
@@ -295,39 +330,5 @@ public class ClinicServiceImpl implements ClinicService {
 	public Collection<Visit> findVisitsByPetId(int petId) {
 		return visitRepository.findByPetId(petId);
 	}
-
-	@Override
-	public Collection<Offer> findOfferValid(LocalDate date) throws DataAccessException {
-		// TODO Auto-generated method stub
-		return offerRepJpa.findByExpireDate(date);
-	}
-
-	@Override
-	public Offer findOfferById(int id) throws DataAccessException {
-		// TODO Auto-generated method stub
-		return offerRepJpa.findOne(id);
-	}
-
-	@Override
-	public Collection<Offer> findAllOffer() throws DataAccessException {
-		// TODO Auto-generated method stub
-		return offerRepJpa.findAll();
-	}
-
-	@Override
-	public void saveOffer(Offer offer) throws DataAccessException {
-	
-		offerRepJpa.save(offer);
-	}
-
-	@Override
-	public void deleteOffer(Offer offer) throws DataAccessException {
-		// TODO Auto-generated method stub
-		offerRepJpa.delete(offer);
-		
-	}
-
-
-
 
 }
