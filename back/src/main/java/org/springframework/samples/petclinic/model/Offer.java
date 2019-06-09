@@ -7,8 +7,8 @@ import javax.persistence.Entity;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
+import javax.validation.constraints.NotNull;
 
-import org.hibernate.validator.constraints.NotEmpty;
 import org.springframework.format.annotation.DateTimeFormat;
 
 @Entity
@@ -16,19 +16,19 @@ import org.springframework.format.annotation.DateTimeFormat;
 public class Offer extends BaseEntity{
 	
 	@Column(name = "title")
-	@NotEmpty
+	@NotNull
 	private String title;
 	
 	@Column(name = "description")
-	@NotEmpty
+	@NotNull
 	private String description;
 	
 	@Column(name = "discount")
-	@NotEmpty
+	@NotNull
 	private double discount;
 	
 	@Column(name = "expire_date")
-	@NotEmpty
+	@NotNull
 	@Temporal(TemporalType.DATE)
 	@DateTimeFormat(pattern = "yyyy/MM/dd")
 	private Date expireDate;
