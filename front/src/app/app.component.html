@@ -15,88 +15,86 @@
   ~  * limitations under the License. 
   ~  */
   -->
-<<<<<<< HEAD
-=======
-<<<<<<< HEAD
-
-<p>Hola Sergio</p>
-=======
-<<<<<<< HEAD
-<p>antonio</p>
-=======
-<p>Hola Cristian</p>
-<h1>Pedro!!!</h1>
->>>>>>> b839575a3491c558a9a2c6daf6b27157c0309c18
->>>>>>> 77399ce8fe40a8332425a9b12426b6e164105080
->>>>>>> d70de4f26ddbf41e0bda18286aa8ff9758e36605
 <div class="container-fluid">
 
-<nav class="navbar navbar-default " role="navigation">
-  <div class="container-fluid">
-  <div class="navbar-header">
-    <a class="navbar-brand" href="#"><span></span></a>
-  </div>
+    <nav class="navbar navbar-default " role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#"><span></span></a>
+            </div>
 
-    <ul class="nav navbar-nav">
-      <li>
-        <a routerLink="welcome" title="home page">
-          <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
-          <span>Home</span>
-        </a>
-      </li>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a routerLink="welcome" title="home page">
+                        <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                        <span>Home</span>
+                    </a>
+                </li>
 
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" role="button"
-           aria-haspopup="true" aria-expanded="false">Owners<span class="caret"></span>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Owners<span class="caret"></span>
         </a>
-        <ul class="dropdown-menu">
-          <li><a routerLink="/owners"><span class="glyphicon glyphicon-search"
+                    <ul class="dropdown-menu">
+                        <li><a routerLink="/owners"><span class="glyphicon glyphicon-search"
                                             aria-hidden="true"></span><span> All</span></a></li>
-          <li><a routerLink="/owners/add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><span> Add New</span></a>
-          </li>
-        </ul>
-      </li>
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" role="button"
-           aria-haspopup="true" aria-expanded="false">Veterinarians<span class="caret"></span>
+                        <li><a routerLink="/owners/add"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span><span> Add New</span></a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Veterinarians<span class="caret"></span>
         </a>
-        <ul class="dropdown-menu">
-          <li><a routerLink="/vets"><span class="glyphicon glyphicon-search" aria-hidden="true"></span><span> All</span></a>
-          </li>
-          <li><a routerLink="/vets/add"><span class="glyphicon glyphicon-plus"
+                    <ul class="dropdown-menu">
+                        <li><a routerLink="/vets"><span class="glyphicon glyphicon-search" aria-hidden="true"></span><span> All</span></a>
+                        </li>
+                        <li><a routerLink="/vets/add"><span class="glyphicon glyphicon-plus"
                                               aria-hidden="true"></span><span> Add New</span></a></li>
-        </ul>
-      </li>
-      <li>
-        <a routerLink="/pettypes" routerLinkActive="active" title="pettypes">
-          <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-          <span>Pet Types</span>
-        </a>
-      </li>
-      <li>
-        <a routerLink="/specialties" routerLinkActive="active" title="specialties">
-          <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
-          <span>Specialties</span>
-        </a>
-      </li>
+                    </ul>
+                </li>
+                <li>
+                    <a routerLink="/pettypes" routerLinkActive="active" title="pettypes">
+                        <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                        <span>Pet Types</span>
+                    </a>
+                </li>
+                <li>
+                    <a routerLink="/specialties" routerLinkActive="active" title="specialties">
+                        <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                        <span>Specialties</span>
+                    </a>
+                </li>
 
-      <!--Añadido ofert en el menu-->
-      <li class="dropdown">
-        <a class="dropdown-toggle" data-toggle="dropdown" role="button"
-           aria-haspopup="true" aria-expanded="false">Oferts<span class="caret"></span>
-        </a>
-        <ul class="dropdown-menu">
-          <li><a routerLink="/ofert"><span class="glyphicon glyphicon-search" aria-hidden="true"></span><span> All</span></a>
-          </li>
-          <li><a routerLink="/ofert/add"><span class="glyphicon glyphicon-plus"
-                                              aria-hidden="true"></span><span> Add New</span></a></li>
-        </ul>
-      </li>
+                <!--Añadido ofert en el menu-->
+                <li class="dropdown">
+                    <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                      Ofertas<span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <a routerLink="/ofertas">
+                                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                                <span> Todas Las Ofertas</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink="/ofertas/validas">
+                                <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                                <span> Ofertas Válidas</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a routerLink="/ofertas/add">
+                                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>
+                                <span> Nueva Oferta</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
 
-    </ul>
+            </ul>
 
-  </div>
-</nav>
+        </div>
+    </nav>
 
 </div>
 
@@ -107,10 +105,8 @@
 <br/>
 <br/>
 <div class="container">
-  <div class="row">
-    <div class="col-12 text-center"><img src="./assets/images/angular.png"
-                                         alt="Angular" height="80" width="80"/>
-      <img src="./assets/images/spring-pivotal-logo.png"
-           alt="Sponsored by Pivotal"/></div>
-  </div>
+    <div class="row">
+        <div class="col-12 text-center"><img src="./assets/images/angular.png" alt="Angular" height="80" width="80" />
+            <img src="./assets/images/spring-pivotal-logo.png" alt="Sponsored by Pivotal" /></div>
+    </div>
 </div>

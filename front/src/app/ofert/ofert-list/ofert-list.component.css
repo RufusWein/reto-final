@@ -1,0 +1,15 @@
+.table>thead>tr>th {
+    text-align: center;
+}
+
+.table {
+    text-align: center;
+}
+
+td>span:first-child {
+    padding-right: 1em;
+}
+
+td>span {
+    cursor: pointer;
+}

@@ -1,0 +1,8 @@
+div>div {
+    margin-left: auto;
+    margin-right: auto;
+    width: 8cm;
+    padding: .5cm 1cm;
+    border: 1px solid lightgray;
+    border-radius: 5px;
+}

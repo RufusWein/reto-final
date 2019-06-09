@@ -1,5 +1,4 @@
-export interface Ofert {
-
+export class Ofert {
     id:number;
     title: string;
     description: string;

@@ -28,14 +28,14 @@ import { OfertListComponent } from './ofert/ofert-list/ofert-list.component';
 import { OfertEditComponent } from './ofert/ofert-edit/ofert-edit.component';
 import { OfertAddComponent } from './ofert/ofert-add/ofert-add.component';
 
-
-
 const appRoutes: Routes = [
   {path: 'welcome', component: WelcomeComponent},
   {path: '', component: WelcomeComponent},
-  {path: 'ofert', component: OfertListComponent},
-  {path: 'ofert/add', component: OfertAddComponent},
-  {path: 'ofert/edit/1', component: OfertEditComponent},
+
+  {path: 'ofertas', component: OfertListComponent},
+  {path: 'ofertas/add', component: OfertAddComponent},
+  {path: 'ofertas/edit/:id', component: OfertEditComponent},
+  {path: 'ofertas/validas', component: OfertListComponent},
   {path: '**', component: PageNotFoundComponent}
 ];
 
